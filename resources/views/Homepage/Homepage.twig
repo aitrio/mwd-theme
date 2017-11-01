@@ -1,0 +1,50 @@
+{% extends getPartial('page-design') %}
+{% set companyLogo  = config("Mwd.header.company_logo") %}
+{% set companyName  = config("Mwd.header.company_name") %}
+{% set lang = services.sessionStorage.getLang() %}
+{% set configItemName = config("Mwd.item.name") %}
+{% set currentLang = services.sessionStorage.getLang() %} 
+    
+    
+    
+{% block PartialHead %}
+    <meta property="og:title" content="{{ companyName }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+    <meta property="og:image"
+          content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Mwd') }}/{{ companyLogo }}{% endif %}"/>
+
+    <link rel="canonical"
+          href="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}{{ item.documents[0].data | itemURL }}">
+
+    <script type="application/ld+json">
+        {"@context": "http://schema.org","@type": "WebSite","url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}","potentialAction":{"@type": "SearchAction","target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}","query-input": "required name=search_term"}}
+    </script>
+
+    <title>{{ config("Mwd.header.company_name") }}</title>
+{% endblock %}
+
+
+{% block PageBody %}
+
+	<!-- Insert markup for homepage here -->
+
+<div class="container">
+
+    <h1>New homepage</h1>
+<p>test</p>
+
+          {% include 'Mwd::Homepage.DefaultHomepage.twig' %}
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+

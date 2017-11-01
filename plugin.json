@@ -1,0 +1,123 @@
+{
+    "version": "0.0.1",
+    "license": "AGPL-3.0",
+    "name": "MWD",
+    "marketplaceName": { "de": "MWD", "en": "MWD" },
+    "pluginIcon": "icon_plugin_xs.png",
+    "authorIcon": "icon_author_xs.png",
+    "email": "post@aitrio.com",
+    "phone": "+49 30 49949494 4",
+    "description": "MWD THEME",
+    "shortDescription": { "de": "mwd theme.", "en": "mwd theme" },
+    "namespace": "MWD",
+    "author": "www.mehrwertdeals.club",
+    "keywords": ["plentymarkets", "plugins", "layout", "theme", "mwd"],
+    "price": 0,
+    "categories": [3518],
+    "type": "theme",
+    "require": ["Mwd"],
+    "serviceProvider": "Mwd\\Providers\\MwdServiceProvider",
+    "dataProviders": [{
+            "key": "Mwd\\Containers\\MwdContainer",
+            "name": "Stylesheet",
+            "description": "Add changes to the CSS file"
+        },
+        {
+            "key": "Mwd\\Containers\\MwdItemListContainer1",
+            "name": "First item list",
+            "description": "Display a configurable list of items in your online store"
+        },
+        {
+            "key": "Mwd\\Containers\\MwdItemListContainer2",
+            "name": "Second item list",
+            "description": "Display a configurable list of items in your online store"
+        },
+        {
+            "key": "Mwd\\Containers\\MwdItemListContainer3",
+            "name": "Third item list",
+            "description": "Display a configurable list of items in your online store"
+        }
+    ],
+    "containers": [{
+            "key": "Template.Style",
+            "name": "Template: Style",
+            "description": "Add style to Mwd with a theme plugin."
+        },
+        {
+            "key": "Template.StyleOverwrite",
+            "name": "Template: Override style",
+            "description": "Override the default CSS file of Mwd."
+        },
+        {
+            "key": "Homepage",
+            "name": "Override homepage",
+            "description": "Override the complete homepage."
+        },
+        {
+            "key": "Homepage.Container1",
+            "name": "Homepage: Container 1",
+            "description": "Replace the image slider of the homepage."
+        },
+        {
+            "key": "Homepage.Container2",
+            "name": "Homepage: Container 2",
+            "description": "Replace the upper item preview of the homepage."
+        },
+        {
+            "key": "Homepage.Container3",
+            "name": "Homepage: Container 3",
+            "description": "Replace the lower item preview of the homepage."
+        },
+        {
+            "key": "Homepage.Container4",
+            "name": "Homepage: Container 4",
+            "description": "Replace the first category preview of the homepage."
+        },
+        {
+            "key": "Homepage.Container5",
+            "name": "Homepage: Container 5",
+            "description": "Replace the second category preview of the homepage."
+        },
+        {
+            "key": "Homepage.Container6",
+            "name": "Homepage: Container 6",
+            "description": "Replace the first list of items of the homepage."
+        },
+        {
+            "key": "Homepage.Container7",
+            "name": "Homepage: Container 7",
+            "description": "Replace the third category preview of the homepage."
+        },
+        {
+            "key": "Homepage.Container8",
+            "name": "Homepage: Container 8",
+            "description": "Replace the fourth category preview of the homepage."
+        },
+        {
+            "key": "Homepage.Container9",
+            "name": "Homepage: Container 9",
+            "description": "Replace the second list of items of the homepage."
+        },
+        {
+            "key": "Homepage.Container10",
+            "name": "Homepage: Container 10",
+            "description": "Add additional content on the homepage."
+        },
+        {
+            "key": "Homepage.PaymentMethods",
+            "name": "Homepage: Payment method container",
+            "description": "Add a logo of the payment method to the payment methods on the homepage."
+        },
+        {
+            "key": "Homepage.Shipping",
+            "name": "Homepage: Shipping method container",
+            "description": "Add a logo of the shipping method to the shipping methods on the homepage."
+        },
+        {
+            "key": "Homepage.Certified",
+            "name": "Homepage: Certified container",
+            "description": "Add a \"Certified by\" logo to the container on the homepage."
+        }
+
+    ]
+}

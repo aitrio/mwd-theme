@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% set favicon = services.webstoreConfig.getWebstoreConfig().domainSsl ~ '/tpl/favicon_' ~ services.webstoreConfig.getWebstoreConfig().webstoreId ~ '.ico' %}
+
+<link rel="icon" type="img/ico" href="{{ favicon }}">
+
+{% import "Mwd::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+
+{% set logData = config("Mwd.log.data")|split(', ') %}
+{% set sortValues = config("Mwd.sort.data")|split(', ') %}
+{% set defaultSorting = config('Mwd.sort.defaultSorting') %}
+{% set defaultSortingSearch = config('Mwd.sort.defaultSortingSearch') %}
+{% set rowsPerPage = config('Mwd.pagination.rowsPerPage') | split(', ') %}
+{% set columnsPerPage = config('Mwd.pagination.columnsPerPage') %}
+{% set itemsPerPage = rowsPerPage[0] * columnsPerPage %}
+{% set performanceLevel = config('Mwd.log.performance.level') %}
+{% set itemName = config('Mwd.item.name') %}
+
+{# <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title> #}
+
+{% if LayoutContainer.show("Mwd::Template.StyleOverwrite") | trim is empty %}
+    <link rel="stylesheet" href="{{ plugin_path('Mwd') }}/css/Mwd.css">
+{% endif %}
+
+{{ LayoutContainer.show("Mwd::Template.StyleOverwrite") }}
+
+<!-- Extend the existing style with a template -->
+{{ LayoutContainer.show("Mwd::Template.Style") }}
+
+<script>
+    App = {
+        config:
+        {
+            printErrors:        {% if "print_errors" in logData or "all" in logData %}true{% else %}false{% endif %},
+            printSuccess:       {% if "print_success" in logData or "all" in logData %}true{% else %}false{% endif %},
+            printWarnings:      {% if "print_warnings" in logData or "all" in logData %}true{% else %}false{% endif %},
+            printInfos:         {% if "print_infos" in logData or "all" in logData %}true{% else %}false{% endif %},
+            printStackTrace:    {% if "print_stack_trace" in logData or "all" in logData %}true{% else %}false{% endif %},
+            logMessages:        {% if "log_messages" in logData or "all" in logData %}true{% else %}false{% endif %},
+            defaultItemsPerPage: "{{ itemsPerPage }}",
+            defaultSorting: "{{ defaultSorting }}",
+            defaultSortingSearch: "{{ defaultSortingSearch }}",
+            performanceLevel: "{{ performanceLevel }}",
+            itemName: {{ itemName }},
+            variationShowType: "{{ config("Mwd.item.variation_show_type") }}",
+            enabledBillingAddressFields: "{{ config("Mwd.billing_address.show") }}",
+            enabledBillingAddressFieldsUK: "{{ config("Mwd.billing_address.en.show") }}",
+            enabledDeliveryAddressFields: "{{ config("Mwd.delivery_address.show") }}",
+            enabledDeliveryAddressFieldsUK: "{{ config("Mwd.delivery_address.en.show") }}",
+            enableOldUrlPattern: "{{ config("Mwd.global.enableOldUrlPattern") }}",
+            shopName: "{{ config("Mwd.header.company_name") }}"
+        },
+        isCategoryView: {% if services.template.isCategory() == "1" %}true{% else %}false{% endif %},
+        isCheckoutView : {% if services.template.isCheckout() == "1" %}true{% else %}false{% endif %},
+        isSearch: {% if services.template.isSearch() == "1" %}true{% else %}false{% endif %}
+    };
+</script>
