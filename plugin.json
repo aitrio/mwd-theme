@@ -15,7 +15,7 @@
     "price": 0,
     "categories": [3518],
     "type": "theme",
-    "require": ["IO"],
+    "require": ["Ceres", "IO"],
     "serviceProvider": "Mwd\\Providers\\MwdServiceProvider",
     "dataProviders": [{
             "key": "Mwd\\Containers\\MwdContainer",
