@@ -1,4 +1,4 @@
-# Release Notes für TeppichBoss
+# Release Notes für mwd
 
 ## v0.0.1 (2017-08-02)
 
