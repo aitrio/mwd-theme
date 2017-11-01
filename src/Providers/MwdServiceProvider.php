@@ -2,15 +2,15 @@
 
 namespace Mwd\Providers;
 
-use Mwd\Caching\NavigationCacheSettings;
-use Mwd\Caching\SideNavigationCacheSettings;
-use IO\Services\ContentCaching\Services\Container;
-use Plenty\Plugin\ServiceProvider;
-use Plenty\Plugin\Events\Dispatcher;
-use Plenty\Plugin\Templates\Twig;
-use IO\Helper\TemplateContainer;
 use IO\Extensions\Functions\Partial;
+use IO\Helper\CategoryKey;
+use IO\Helper\CategoryMap;
+use IO\Helper\TemplateContainer;
+use Plenty\Plugin\ServiceProvider;
+use Plenty\Plugin\Templates\Twig;
+use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ConfigRepository;
+use IO\Helper\ComponentContainer;
 
 
 /**

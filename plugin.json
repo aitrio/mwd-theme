@@ -9,7 +9,7 @@
     "phone": "+49 30 49949494 4",
     "description": "MWD THEME",
     "shortDescription": { "de": "mwd theme.", "en": "mwd theme" },
-    "namespace": "MWD",
+    "namespace": "Mwd",
     "author": "www.mehrwertdeals.club",
     "keywords": ["plentymarkets", "plugins", "layout", "theme", "mwd"],
     "price": 0,
