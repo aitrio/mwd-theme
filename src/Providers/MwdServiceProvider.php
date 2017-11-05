@@ -34,8 +34,8 @@ class MwdServiceProvider extends ServiceProvider
         // Override partials
         $dispatcher->listen('IO.init.templates', function (Partial $partial) use ($enabledOverrides)
         {
-            pluginApp(Container::class)->register('Mwd::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
-            pluginApp(Container::class)->register('Mwd::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
+          //  pluginApp(Container::class)->register('Mwd::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
+          //  pluginApp(Container::class)->register('Mwd::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
 
             $partial->set('head', 'Mwd::PageDesign.Partials.Head');
             $partial->set('header', 'Mwd::PageDesign.Partials.Header.Header');
